@@ -1,11 +1,10 @@
-import { Text, View } from 'react-native';
-import { styles } from './styles';
+import { Container, Title } from './styles';
 
 export function Home() {
   return (
-    <View style={styles.container}>
-      <Text>FuelLog 2023!</Text>
-    </View>
+    <Container>
+      <Title>FuelLog 2023!</Title>
+    </Container>
   );
 }
 

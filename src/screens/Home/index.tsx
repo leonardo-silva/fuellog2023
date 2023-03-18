@@ -1,3 +1,4 @@
+import { HighlightCard } from '../../components/HighlightCard';
 import { 
   Container,
   Header,
@@ -8,7 +9,8 @@ import {
   Greeting,
   CarPlate,
   LogoutButton,
-  LogoutIcon 
+  LogoutIcon,
+  HighlightCards 
 } from './styles';
 
 export function Home() {
@@ -36,6 +38,12 @@ export function Home() {
           </LogoutButton>
         </UserWrapper>
       </Header>
+
+      <HighlightCards>
+        <HighlightCard />
+        <HighlightCard />
+        <HighlightCard />
+      </HighlightCards>
     </Container>
   );
 }

@@ -13,8 +13,6 @@ export const Header = styled.View`
   width: 100%;
   height: ${RFPercentage(40)}px;
   background-color: ${({ theme }) => theme.colors.primary};
-  //align-items: center;
-  //justify-content: center;
 `;
 
 export const UserWrapper = styled.View`
@@ -61,3 +59,12 @@ export const LogoutIcon = styled(MaterialIcons)`
 
 `;
 
+export const HighlightCards = styled.ScrollView.attrs({
+  horizontal: true,
+  showsHorizontalScrollIndicator: false,
+  contentContainerStyle: { paddingLeft: 24 }
+})`
+  width: 100%;
+  position: absolute;
+  margin-top: ${getStatusBarHeight() + RFValue(100)}px;
+`;

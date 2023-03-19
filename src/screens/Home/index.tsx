@@ -40,9 +40,27 @@ export function Home() {
       </Header>
 
       <HighlightCards>
-        <HighlightCard />
-        <HighlightCard />
-        <HighlightCard />
+        <HighlightCard 
+          title='Álcool'
+          consumption='7,00 km/l'
+          cost='R$ 0,34 / km'
+          lastTransaction='Última entrada dia 13 de abril'
+          type='alcohol'
+        />
+        <HighlightCard 
+          title='Gasolina'
+          consumption='8,63 km/l'
+          cost='R$ 0,28 / km'
+          lastTransaction='Última entrada dia 03 de abril'
+          type='gasoline'
+        />
+        <HighlightCard 
+          title='Geral'
+          consumption='7,82 km/l'
+          cost='R$ 0,31 / km'
+          lastTransaction='01 a 16 de abril'
+          type='total'
+        />
       </HighlightCards>
     </Container>
   );

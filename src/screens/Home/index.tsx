@@ -1,4 +1,5 @@
 import { HighlightCard } from '../../components/HighlightCard';
+import { TransactionCard } from '../../components/TransactionCard';
 import { 
   Container,
   Header,
@@ -10,7 +11,9 @@ import {
   CarPlate,
   LogoutButton,
   LogoutIcon,
-  HighlightCards 
+  HighlightCards,
+  Transactions,
+  Title 
 } from './styles';
 
 export function Home() {
@@ -62,6 +65,12 @@ export function Home() {
           type='total'
         />
       </HighlightCards>
+
+      <Transactions>
+        <Title>Abastecimentos</Title>
+
+        <TransactionCard />
+      </Transactions>
     </Container>
   );
 }

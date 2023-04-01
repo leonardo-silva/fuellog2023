@@ -12,33 +12,48 @@ import {
   Date,
 } from "./styles";
 
-export function TransactionCard() {
+export interface TransactionCardProps {
+  type: 'alcohol' | 'gasoline';
+  value: string;
+  price: string;
+  amount: string;
+  km: string;
+  date: string; 
+}
+
+interface Props {
+  data: TransactionCardProps;
+}
+
+export function TransactionCard({ data }: Props) {
   return (
     <Container>
       <Header>
         <ValueContainer>
           <ValueLabel>Valor: </ValueLabel>
-          <Value>R$ 151,24</Value>
+          <Value type={data.type}>{data.value}</Value>
         </ValueContainer>
-        <Type>Álcool</Type>
+        <Type>
+          {data.type === 'alcohol' ? 'Álcool' : 'Gasolina'}
+        </Type>
       </Header>
 
       <AmountContainer>
         <ValueLabel>Preço do litro: </ValueLabel>
-        <Amount>R$ 3,98</Amount>
+        <Amount>{data.price}</Amount>
       </AmountContainer>
 
       <AmountContainer>
         <ValueLabel>Qtd de litros: </ValueLabel>
-        <Amount>38</Amount>
+        <Amount>{data.amount}</Amount>
       </AmountContainer>
 
       <Footer>
         <KmContainer>
           <ValueLabel>Km percorrida: </ValueLabel>
-          <Amount>340</Amount>
+          <Amount>{data.km}</Amount>
         </KmContainer>
-        <Date>13/04/2022</Date>
+        <Date>{data.date}</Date>
       </Footer>
       
     </Container>

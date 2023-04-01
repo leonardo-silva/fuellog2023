@@ -1,12 +1,16 @@
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
+interface TypeProps {
+  type: 'alcohol' | 'gasoline';
+}
+
 export const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.header_text};
   border-radius: 5px;
 
   padding: 10px 22px;
-  margin-top: ${RFValue(18)}px;
+  margin-top: ${RFValue(15)}px;
 `;
 
 export const Header = styled.View`
@@ -27,8 +31,9 @@ export const ValueLabel = styled.Text`
   margin-right: 15px;
 `;
 
-export const Value = styled.Text`
-  color: ${({ theme }) => theme.colors.primary_light};
+export const Value = styled.Text<TypeProps>`
+  color: ${({ theme, type }) => 
+    type === 'alcohol' ? theme.colors.primary_light : theme.colors.secondary};
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: ${RFValue(16)}px;
 `;
@@ -42,7 +47,7 @@ export const Type = styled.Text`
 export const AmountContainer = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-top: 10px;
+  margin-top: ${RFValue(6)}px;
 `;
 
 export const Amount = styled.Text`
@@ -55,7 +60,7 @@ export const Footer = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 10px 0 10px 0;
+  margin: ${RFValue(6)}px 0 ${RFValue(10)}px 0;
 `;
 
 export const KmContainer = styled.View`
